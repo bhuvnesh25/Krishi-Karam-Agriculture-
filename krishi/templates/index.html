@@ -1,0 +1,270 @@
+<!Doctype html>
+{% load static %}
+
+
+<html xmlns="http://www.w3.org/1999/html">
+<head>
+<title>कृषिकर्म MAIN PAGE</title>
+	<script type="text/javascript">window.$crisp=[];window.CRISP_WEBSITE_ID="7678d60a-8802-4d2d-a9a5-e5851b504d1c";(function(){d=document;s=d.createElement("script");
+s.src="https://client.crisp.chat/l.js";s.async=1;d.getElementsByTagName("head")[0].appendChild(s);})();</script>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script type="application/x-javascript"> addEventListener("load", function() { setTimeout(hideURLbar, 0); }, false); function hideURLbar(){ window.scrollTo(0,1); } </script>
+<meta name="keywords" content="Bootstrap Responsive Templates, Iphone Compatible Templates, Smartphone Compatible Templates, Ipad Compatible Templates, Flat Responsive Templates"/>
+<script  type = "text/javascript" src = "{% static 'js/jquery.js' %}"></script>
+<link href="{% static 'styles/bootstrap.css' %}" rel='stylesheet' type='text/css' />
+<link href="{% static 'styles/style.css' %}" rel='stylesheet' type='text/css' />
+<link rel="shortcut icon" type="image/x-icon" href="{% static 'images/logo3.png' %}" />
+
+<link href='http://fonts.googleapis.com/css?family=Arimo:400,700,400italic,700italic' rel='stylesheet' type='text/css'>
+</head>
+<body>
+	<!--start-header-->
+			<div id="home" class="header">
+					<div class="top-header">
+						<div class="container">
+							<div class="logo">
+								<a href="{% url 'home' %}"><img src="{% static 'img\logo_short.png'%}" alt=""></a>
+							</div>
+							<!--start-top-nav-->
+							 <div class="top-nav">
+								<ul>
+									<li class="active"><a class="play-icon popup-with-zoom-anim" href="#small-dialog"><span> </span>Log in</a></li>
+									<li><a class="play-icon popup-with-zoom-anim" href="#small-dialog1">Sign up</a></li>
+								</ul>
+							</div>
+							<div class="clearfix"> </div>
+						</div>
+				</div>
+			<!---pop-up-box---->
+					 <script src="{% static 'js/modernizr.custom.min.js'%}"></script>
+				<link rel= "stylesheet" type= "text/css" media="all" href= "{% static 'styles/popup-box.css' %}">
+
+				<script  type="text/javascript" src="{% static 'js/jquery.magnific-popup.js' %}"></script>
+					<!---//pop-up-box---->
+
+
+				<script src="{% static 'js/modernizr.custom.min.js' %}"></script>
+				<link rel= "stylesheet" type= "text/css" media="all" href= "{% static 'styles/popup-box.css' %}">
+
+				<script  type="text/javascript" src="{% static 'js/jquery.magnific-popup.js'%}"></script>
+
+				<div id="small-dialog" class="mfp-hide">
+						<form action="" method="post">
+							<div class="login">
+							<h3>Log In</h3>
+							<h4>Already a Member</h4>
+							<input name="username" type="text" value="Full Name" onfocus="this.value = '';" onblur="if (this.value == '') {this.value = 'Full Name';}" />
+							<input name="password" type="numeric" value="Aadhaar No." onfocus="this.value = '';" onblur="if (this.value == '') {this.value = 'Aadhaar No.';}"/>
+							<input type="submit" value="Login" />
+						</div>
+						</form>
+					</div>
+					<div id="small-dialog1" class="mfp-hide">
+						<div class="signup">
+							<h3>Sign Up</h3>
+							<h4>Enter Your Details Here</h4>
+							<form action="" >
+							<input name="name" type="text" class="Name" value="Full Name" onfocus="this.value = '';" onblur="if (this.value == '') {this.value = 'Full Name';}" />
+							<input name="state" type="text" value="State" onfocus="this.value = '';" onblur="if (this.value == '') {this.value = 'State';}" />
+							<input name= "city" type="text" value="city" onfocus="this.value = '';" onblur="if (this.value == '') {this.value = 'city';}" />
+							<input name="Aadhaar" type="numeric" class="Adhaar" value="Aadhaar No." onfocus="this.value = '';" onblur="if (this.value == '') {this.value = 'Aadhaar No.';}"  />
+							<input name="mobile" type="numeric" class="Mob" value="Mobile No." onfocus="this.value = '';" onblur="if (this.value == '') {this.value = 'Mobile No.';}"  />
+							<input name="address" type="text" class="Address" value="Address" onfocus="this.value = '';" onblur="if (this.value == '') {this.value = 'Address';}"/>
+							<input name="submit" type="submit"  value="Register"/>
+							</form>
+						</div>
+					</div>
+				 <script>
+						$(document).ready(function() {
+						$('.popup-with-zoom-anim').magnificPopup({
+							type: 'inline',
+							fixedContentPos: false,
+							fixedBgPos: true,
+							overflowY: 'auto',
+							closeBtnInside: true,
+							preloader: false,
+							midClick: true,
+							removalDelay: 300,
+							mainClass: 'my-mfp-zoom-in'
+						});
+
+						});
+				</script>
+		<!--End-header-->
+				<script src href="{% static 'styles/style.css' %}" rel='stylesheet' type='text/css' > </script>
+		<div class="navgation">
+					<div class="menu">
+                         <a class="toggleMenu" href="#"><img src="{% static 'images/menu-icon.png' %}" alt="" /> </a>
+							<ul class="nav" id="nav">
+							<li><a href="{% url 'home' %}">Home</a></li>
+							<li><a href="{% url 'about' %}">About Us</a></li>
+							<li><a href="404.html">Services</a> </li>
+								<li><a href="{% url 'contact' %}">Contact</a></li>
+
+							</ul>
+                            <!----start-top-nav-script---->
+						<script type="text/javascript" src="{% static 'js/responsive-nav.js' %}">
+							jQuery(document).ready(function($) {
+								$(".scroll").click(function(event){
+									event.preventDefault();
+									$('html,body').animate({scrollTop:$(this.hash).offset().top},1000);
+								});
+							});
+							</script>
+							<!----//End-top-nav-script---->
+					</div>
+					<div class="search2">
+					  <form>
+						 <input type="text" value="Search.." onfocus="this.value = '';" onblur="if (this.value == '') {this.value = 'Search..';}"/>
+						 <input type="submit" value="">
+					  </form>
+					</div>
+					<div class="clearfix"> </div>
+			</div>
+		</div>
+		<div class="banner">
+			<div class="container">
+				<div class="bnr-text">
+					<h1>GIVING A JOYOUS AGRICULTURAL LIFE !</h1>
+
+				</div>
+			</div>
+		</div>
+
+
+
+		<div class="care">
+			<div class="container">
+				<div class="care-top">
+					<h3>WE CARE ! WE WILL MAKE <b>CHANGE</b> HAPPEN !</h3>
+					<P><b>Effective agriculture has the power to change lives. It underpins prosperity, food security and stability the world over. Farm Africa focuses on transforming agriculture and managing natural resources sustainably. We champion a holistic approach that boosts yields, protects the environment and connects smallholder farmers to thriving markets</b></P>
+				</div>
+				<div class="care-bottom">
+					<div class="col-md-4 c-bottom">
+						<div class="care-bottom-left">
+							<img src="{% static 'images/tree.png' %}" alt="">
+							<h4>WHAT YOU WANT TO BUY ?</h4>
+							<p>Farmers can contact incase they want to buy any kind of machinery including pumps and other , weedisides,pesticides,seeds for new crops and also everything in a proper amount after soil testing has been performed.. </p>
+
+							</div>
+					</div>
+					<div class="col-md-4 c-bottom">
+						<div class="care-bottom-middle">
+							<img src="{% static 'images/tree-1.png' %}" alt="">
+							<h4>WHAT YOU WANT TO SELL ?</h4>
+							<p>We are working on everything to know about the actual price of cultivated crops in different areas. If farmers are aware of how much they can get after selling then is will automatically increase <b>INCOME</b></p>
+
+							</div>
+					</div>
+					<div class="col-md-4 c-bottom">
+						<div class="care-bottom-right">
+							<img src="{% static 'images/tree-2.png' %}" alt="">
+							<h4>WHAT RATES YOU CAN HAVE!</h4>
+							<p>The indian government is giving subsidy on very less things to farmers and at the same time those seeds,pesicides etc can be made available to farmers on genuine rates directly from wholesalers hence cutting the tax and GSTrates indirectly. </p>
+
+							</div>
+					</div>
+					<div class="clearfix"> </div>
+				</div>
+			</div>
+		</div>
+		<div class="news">
+			<div class="container">
+				<div class="news-top">
+					<h3>NEWS AND ARTICLES</h3>
+				</div>
+				<div class="news-bottom">
+					<div class="col-md-6 news-bottom-left">
+						<a href="single.html" class="b-link-stripe b-animate-go  thickbox">
+									<img class="port-pic" class="img-responsive" src="{% static 'images/one-2.jpg'%}" />
+									<div class="b-wrapper">
+										<h2 class="b-animate b-from-left b-from   b-delay03 ">
+											<span>How INCOME is AFFECTED ?
+
+											<BUTTON>A farmer’s income is the difference between input cost and selling price of his produce. Since the cost of inputs, including seeds, fertilizers, pesticides, fuel to draw out water and machines, is rising, the profit made from sale of crops is declining. .
+											</BUTTON>
+											</span>
+										</h2>
+									</div>
+								</a>
+					</div>
+					<div class="col-md-6 news-bottom-left">
+						<div class="news-btm">
+							<a href="single.html" class="b-link-stripe b-animate-go  thickbox">
+									<img class="port-pic" src="{%static 'images/apple.jpg' %}" />
+									<div class="b-wrapper">
+										<h2 class="b-animate b-from-left    b-delay03 ">
+											<button >In contrast, income from non-farm employment has been on the rise thus turning farmers into one of the most deprived sections of India.
+												The Central government announces assured minimum support price every year, but that has failed to offset the rising input cost. Assured market is only available for wheat, rice, sugarcane (thanks to public distribution system) and cotton, which is why attempts of diversification tend to fail. For other crops like pulses, there are not enough buyers who offer the support price and farmers are forced to go for distress sale.</button>
+										</h2>
+									</div>
+								</a>
+						</div>
+						<a href="http://www.indiawaterportal.org/topics/agriculture" class="b-link-stripe b-animate-go  thickbox">
+									<img class="port-pic" src="{% static 'images/veg.jpg' %}" />
+									<div class="b-wrapper">
+										<h2 class="b-animate b-from-left    b-delay03 ">
+											<span></span>
+											<button onclick=;"></button>
+										</h2>
+									</div>
+								</a>
+					</div>
+					<div class="clearfix"> </div>
+					<div class="news-btm1">
+						<a href="single.html" class="b-link-stripe b-animate-go  thickbox">
+									<img class="port-pic" class="img-responsive" src="{% static 'images/fd-btm1.jpg' %}" />
+									<div class="b-wrapper">
+										<h2 class="b-animate b-from-left b-left   b-delay03 ">
+											<span>DIRECT MARKETING</span>
+											<button>On the other hand, present-day wholesale markets have long chain of intermediaries resulting in wide gap between the producer and consumer prices. Direct marketing, which does away with intermediaries and hence gets better price to the farmers, needs to be promoted. Farmers’ markets, especially in case of vegetables, have shown good results. Such markets have also promoted diversification as farmers include a wider variety of vegetables, and maximise use of water and land resources throughout the year. </button>
+										</h2>
+									</div>
+								</a>
+					</div>
+
+				</div>
+			</div>
+		</div>
+		<div class="contact">
+			<div class="container">
+				<div class="contact-main">
+					<div class="col-md-4 contact-left">
+						<h4>For Help center contact</h4>
+						<p><span>Email:<a href=" info@gni.edu.in">info@gni.edu.in</a></span></p>
+						<p><span>Phone:099961 00140 , 01731-274540, 01731-275640</span></p>
+					</div>
+					<div class="col-md-4 contact-left">
+						<h4>Address</h4>
+						<p>Hema Majra Road, Village - Sohana, Mullana,Ambala, Haryana 133203</p>
+					</div>
+					<div class="col-md-4 contact-left">
+						<h4>Follow us</h4>
+						<ul>
+							<li><a href="https://www.facebook.com/GNI.Ambala"><span class="fb"> </span></a></li>
+							<li><a href="#"><span class="twit"> </span></a></li>
+							<li><a href="https://www.instagram.com/gnimullana/"><span class="in"> </span></a></li>
+							<li><a href="https://www.youtube.com/channel/UCCv4dcX7w-WiuECvrX5NF_A"><span class="yt"> </span></a></li>
+						</ul>
+					</div>
+					<div class="clearfix"> </div>
+				</div>
+			</div>
+		</div>
+		<div class="map">
+			<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d16694.645346508965!2d77.00466727838617!3d30.271527738718106!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!
+							1s0x0%3A0x61e2595556a0fc0d!2sGuru+Nanak+Institute+of+Technology!5e1!3m2!1sen!2sin!4v1522612619077"frameborder="0" style="border:0"></iframe>
+		</div>
+		 <div class="footer">
+                         <div class="container">
+                                    <div class="footer-text">
+										<p>DESIGN BY  TEAM DOMINATORS</a></p>
+									</div>
+                         </div>
+					<a href="#home" id="toTop" class="scroll" style="display: block;"> <span id="toTopHover" style="opacity: 1;"> </span></a>
+     </div>
+
+
+
+</body>
+</html>
