@@ -22,5 +22,8 @@ urlpatterns = [
     path("home", home, name="home"),
     path("about", about, name="about"),
     path("contact", contact, name="contact"),
-    path("login", login_view ,name="login")
+    path("event",event, name="event"),
+    path("buy",buy_sell, name="buy_sell"),
+    path("login", login_view ,name="login"),
+    path("signup", signup_view,name="signup")
 ]

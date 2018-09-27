@@ -1,174 +1,80 @@
 <!DOCTYPE html>
 {% load static %}
-<html>
+<html lang="en">
 <head>
-<title>कृषिकर्म CONTACT PAGE</title>
-<meta name="viewport" content="width=device-width, initial-scale=1">	
-<meta name="keywords" content="Bootstrap Responsive Templates, Iphone Compatible Templates, Smartphone Compatible Templates, Ipad Compatible Templates, Flat Responsive Templates"/>
-<script type="application/x-javascript"> addEventListener("load", function() { setTimeout(hideURLbar, 0); }, false); function hideURLbar(){ window.scrollTo(0,1); } </script>
-<script type = "text/javascript" src ="{% static 'js/jquery.js' %}"></script>
-<link href='http://fonts.googleapis.com/css?family=Arimo:400,700,400italic,700italic' rel='stylesheet' type='text/css'>
-	<link rel= "stylesheet" type= "text/css" href= "{% static 'styles/bootstrap.css' %}">
-<link rel= "stylesheet" type= "text/css" href="{% static 'styles/style.css' %}">
-	<link rel="shortcut icon" type="image/x-icon" href="{% static 'images/logo3.png' %}" />
-
+    <link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/css/bootstrap.min.css" integrity="sha384-PsH8R72JQ3SOdhVi3uxftmaW6Vc51MKb0q5P2rRUpPvrszuE4W1povHYgTpBfshb" crossorigin="anonymous">
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/js/bootstrap.min.js" integrity="sha384-alpBpkh1PFOepccYVYDB4do5UnbKysX5WZXm3XxPqe5iKTfUKjNkCk9SaVuEZflJ" crossorigin="anonymous"></script>
+    <link rel="stylesheet" type="text/css" href="{% static 'css/contact.css' %}">
 </head>
 <body>
-	<form method="post">
-	<!--start-header-->
-			<div id="home" class="header">
-					<div class="top-header">
-						<div class="container">
-							<div class="logo">
-								<a href="{% url 'home' %}"><img src="{% static 'img/logo_short.png' %}" alt=""></a>
-							</div>
-							<!--start-top-nav-->
-							 <nav class="top-nav">
-								<ul>
-									<li class="active"><a class="play-icon popup-with-zoom-anim" href="#small-dialog"><span> </span>Log in</a></li>
-									<li><a class="play-icon popup-with-zoom-anim" href="#small-dialog1">Sign up</a></li>
-								</ul>
-							</nav>
-							<div class="clearfix"> </div>
-						</div>
-				</div>
-			<!---pop-up-box---->
-					 <script src="{% static 'js/modernizr.custom.min.js' %}"></script>
-				<link rel= "stylesheet" type= "text/css" media="all" href= "{% static 'styles/popup-box.css' %}">
-
-				<script  type="text/javascript" src="{% static 'js/jquery.magnific-popup.js' %}"></script>
-					<!---//pop-up-box---->
-				<div id="small-dialog" class="mfp-hide">
-						<div class="login">
-							<h3>Log In</h3>
-							<h4>Already a Member</h4>
-							<input name="username" type="text" value="Full Name" onfocus="this.value = '';" onblur="if (this.value == '') {this.value = 'Full Name';}" />
-							<input name="password" type="numeric" value="Aadhaar No." onfocus="this.value = '';" onblur="if (this.value == '') {this.value = 'Aadhaar No.';}"/>
-							<input type="submit" value="Login" />
-						</div>
-					</div>
-					<div id="small-dialog1" class="mfp-hide">
-						<div class="signup">
-							<h3>Sign Up</h3>
-							<h4>Enter Your Details Here</h4>
-							<input name="name" type="text" class="Name" value="Full Name" onfocus="this.value = '';" onblur="if (this.value == '') {this.value = 'Full Name';}" />
-							<input name="state" type="text" value="State" onfocus="this.value = '';" onblur="if (this.value == '') {this.value = 'State';}" />
-							<input name= "city" type="text" value="city" onfocus="this.value = '';" onblur="if (this.value == '') {this.value = 'city';}" />
-							<input name="Aadhaar" type="numeric" class="Adhaar" value="Aadhaar No." onfocus="this.value = '';" onblur="if (this.value == '') {this.value = 'Aadhaar No.';}"  />
-							<input name="mobile" type="numeric" class="Mob" value="Mobile No." onfocus="this.value = '';" onblur="if (this.value == '') {this.value = 'Mobile No.';}"  />
-							<input name="address" type="text" class="Address" value="Address" onfocus="this.value = '';" onblur="if (this.value == '') {this.value = 'Address';}"/>
-							<input name="submit" type="submit"  value="Register"/>
-						</div>
-					</div>	
-				 <script>
-						$(document).ready(function() {
-						$('.popup-with-zoom-anim').magnificPopup({
-							type: 'inline',
-							fixedContentPos: false,
-							fixedBgPos: true,
-							overflowY: 'auto',
-							closeBtnInside: true,
-							preloader: false,
-							midClick: true,
-							removalDelay: 300,
-							mainClass: 'my-mfp-zoom-in'
-						});
-																						
-						});
-				</script>					
-		<!--End-header-->
-		<div class="navgation">
-					<div class="menu">
-                         <a class="toggleMenu" href="#"><img src="{% static 'images/menu-icon.png' %}" alt="" /> </a>
-							<ul class="nav" id="nav">
-							<li><a href="{% url 'home' %}">Home</a></li>
-							<li><a href="{% url 'about' %}">About Us</a></li>
-							<li><a href="404.html">Services</a></li>
-
-							<li><a href="{% url 'contact' %}" class="active">Contact</a></li>
-							</ul>
-                            <!----start-top-nav-script---->
-		                     <script type="text/javascript" src="{% static 'js/responsive-nav.js' %}">
-							jQuery(document).ready(function($) {
-								$(".scroll").click(function(event){		
-									event.preventDefault();
-									$('html,body').animate({scrollTop:$(this.hash).offset().top},1000);
-								});
-							});
-							</script>
-							<!----//End-top-nav-script---->
-					</div>
-					<div class="search2">
-					  <form>
-						 <input type="text" value="Search.." onfocus="this.value = '';" onblur="if (this.value == '') {this.value = 'Search..';}"/>
-						 <input type="submit" value="">
-					  </form>
-					</div>
-					<div class="clearfix"> </div>
-		</div>
-		</div>
-		<!--contact-starts-->
-		<div class="contact">
-			<div class="container">
-				<div class="contact-top">
-					<h3>CONTACT US</h3>
-					<P>For any kind of queries you can contact us on our links .</P>
-				</div>
-				<div class="contact-bottom">
-					<div class="contact-bottom-top">
-						<div class="col-md-8 contact-top-left">
-							<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d16694.645346508965!2d77.00466727838617!3d30.271527738718106!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!
-							1s0x0%3A0x61e2595556a0fc0d!2sGuru+Nanak+Institute+of+Technology!5e1!3m2!1sen!2sin!4v1522612619077"frameborder="0" style="border:0"></iframe>
-						</div>
-						<div class="col-md-4 contact-top-left">
-							<div class="contact-top-one">
-								<h4>ADDRESS:</h4>
-									<h6>कृषिकर्म...
-										<span>Hema Majra Road, Village - Sohana, Mullana,Ambala, Haryana 133203</span>
-									</h6>
-							</div>
-							<div class="contact-top-one">
-								<h4>PHONES:</h4>
-									<p>Telephone: 099961 00140 , 01731-274540, 01731-275640
-									<span>FAX: 01731-275640</span>
-									</p>
-							</div>
-							<div class="contact-top-one">
-								<h4>E-MAIL:</h4>
-								<p><a href="info@gni.edu.in">info@gni.edu.in</a></p>
-								<h4>VISIT AT:</h4>
-								<p><a href="https://www.gni.edu.in/">www.gni.edu.in</a></p>
-							</div>
-						</div>
-						<div class="clearfix"></div>
-					</div>
-					<div class="contact-bottom-bottom">
-						<h3>MISCELLANEOUS INFORMATION:</h3>
-						<p>This is just an attempt to make a positive change to happen. Please share your queries with us. We will help you from every possible end to make your lives better than before !</p>
-						<div class="contact-text">
-							<input type="text" value="First Name" onfocus="this.value = '';" onblur="if (this.value == '') {this.value = 'First Name';}"/>
-							<input type="text" value="Second Name" onfocus="this.value = '';" onblur="if (this.value == '') {this.value = 'Second Name';}"/>
-							<input type="text" value="Email Id" onfocus="this.value = '';" onblur=" if (this.value == '') {this.value = 'Email Id';}"/>
-						</div>
-						<div class="contact-textarea">
-							<textarea value="Message:" onfocus="this.value = '';" onblur="if (this.value == '') {this.value = 'Message';}">Message..</textarea>
-						</div>
-						<div class="contact-but">
-							<input type="submit" />
-						</div>
-					</div>
-				</div>
-			</div>
-		</div>
-		<!--contact-end-->
-		 <div class="footer">
-                         <div class="container">
-                                    <div class="footer-text">
-										<p>DESIGN BY  TEAM DOMINATORS</p>
-									</div>
-                         </div>
-					<a href="#home" id="toTop" class="scroll" style="display: block;"> <span id="toTopHover" style="opacity: 1;"> </span></a>
-     </div>
-		</form>
+   {% include 'navbar.html' %}
+    <br><br>
+    <div class="container">
+      <div class="row">
+          <div class="col-lg-8 offset-lg-2 col-12">
+              <div class="row">
+                  <div class="col-lg-12 col-12 p-0 contact-us">
+                    <h4 class=""><b>CONTACT US</b></h4><hr>
+                  </div>
+              </div>
+              <div class="row bg-light pt-3 pb-3 mb-4 jumbotron">
+                  <div class="col-lg-12">
+                    <h6>ADDRESS :</h6>
+                  </div>
+                  <div class="col-lg-4 col-4">
+                      कृषिकर्म...
+                      Hema Majra Road, Village - Sohana, Mullana,Ambala, Haryana 133203                          
+                  </div>
+                  <div class="col-lg-4 col-4">
+                  <p class="m-0 text-danger"><i class="fa fa-phone-square" aria-hidden="true"></i>
+                      099961 00140 , 01731-274540, 01731-275640
+                  </p>
+                  <p class="m-0 text-info"><i class="fa fa-envelope" aria-hidden="true"></i>
+                      info@gni.edu.in
+                  </p>
+                  </div>
+                  <div class="col-lg-4 col-4 address-icon text-center text-danger">
+                  
+                  </div>
+              </div>
+              <div class="row bg-light pt-3 pb-3 mb-4 jumbotron">
+                  <div class="col-lg-6 col-12">
+                    <form>
+                      <div class="form-row mb-3">
+                        <div class="col">
+                          <input type="text" class="form-control" placeholder="Name :">
+                        </div>
+                        
+                      </div>
+                      <div class="form-row mb-3">
+                        <div class="col">
+                          <input type="text" class="form-control" placeholder="Mobile :">
+                        </div>
+                        
+                      </div>
+                      <div class="form-group">
+                        <textarea class="form-control" id="exampleFormControlTextarea1" rows="3" placeholder="Message :"></textarea>
+                      </div>
+                      <button type="submit" class="btn btn-danger mb-4">Send</button>
+                    </form>
+                  </div>
+                  <div class="col-lg-6 col-12">
+                      <div style="width: 100%"><iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d16694.645346508965!2d77.00466727838617!3d30.271527738718106!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!
+              1s0x0%3A0x61e2595556a0fc0d!2sGuru+Nanak+Institute+of+Technology!5e1!3m2!1sen!2sin!4v1522612619077"frameborder="0" style="border:0"></iframe></div>
+                      <div class="icons">
+                          <a href=""><i class="fa fa-facebook"></i></a>
+                          <a href=""><i class="fa fa-twitter"></i></a>
+                          <a href=""><i class="fa fa-linkedin"></i></a>
+                          <a href=""><i class="fa fa-youtube"></i></a>
+                      </div>
+                  </div>
+              </div>
+          </div>
+      </div>
+    </div>
+<footer class="py-5 bg-dark">
+      <h4 style="color:white;">Copyright@ by Team Dominators</h4>
+</footer>
 </body>
 </html>

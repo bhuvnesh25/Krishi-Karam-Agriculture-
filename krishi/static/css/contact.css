@@ -1,0 +1,27 @@
+body{
+ background:#fff;
+}
+.address-icon i{
+	font-size: 36px;
+	line-height: 32px;
+}
+.icons i{
+	color: #fff;
+	padding: 8px 0px;
+	text-align: center;
+	height: 30px;
+	width: 30px;
+	margin-right: 5px;
+}
+.fa-facebook{
+	background-color: #3A5A99; 
+}
+.fa-twitter{
+	background-color: #39CBFA;
+}
+.fa-linkedin{
+	background-color: #3D99C0;
+}
+.fa-youtube{
+	background-color: red;
+}
