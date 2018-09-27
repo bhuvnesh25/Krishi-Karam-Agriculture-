@@ -1,7 +1,7 @@
 from django.shortcuts import render, HttpResponse
 from django.contrib.auth import authenticate,get_user_model,login,logout
 
-from .forms import UserLoginForm
+from .models import *
 
 
 
@@ -16,12 +16,18 @@ def contact(request):
     return render(request, 'contact.html',{"title":"contact"})
 
 def login_view(request):
-    form=UserLoginForm(request.POST or None)
-    if form.is_valid():
-        username=form.cleaned_data.get("username")
-        password=form.cleaned_data.get("password")
-
-    return render(request, 'form.html', {"form":form})
+    if request.method == "POST":
+        username=request.POST.get("username")
+        password=request.POST.get("password")
+        user = User.objects.filter(mobile=username).first()
+        if user:
+            if user.aadhaar==password:
+                return HttpResponse("successfully Login")
+            else:
+                return HttpResponse("Invalid password")
+        else:
+            return HttpResponse("Invalid Mobile no")
+    return render(request, 'form.html', {})
 
 
 def signup_view(request):
