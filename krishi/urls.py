@@ -22,4 +22,11 @@ urlpatterns = [
     path("home", home, name="home"),
     path("about", about, name="about"),
     path("contact", contact, name="contact"),
+    path("event",event, name="event"),
+    path("services",services, name="services"),
+    path("detail",detail, name="detail"),
+    path("buy",buy_sell, name="buy_sell"),
+    path("login", login_view ,name="login"),
+    path("signup", signup_view,name="signup"),
+path("logout", signup_view,name="logout")
 ]

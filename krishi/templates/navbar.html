@@ -1,0 +1,244 @@
+</html>
+<head>
+<style>
+.logo {
+    font-family: cursive;
+    color:orange;
+  }
+ form{
+       margin-top:-30px;
+       margin-left:20px;
+ }
+ #nav{
+     margin-left:200px;
+ }
+</style>
+</head>5
+<body>
+<nav class="navbar navbar-expand-md navbar-dark bg-dark">
+      <div class="container" style="font-weight: bolder; margin-left:-10px;">
+        <a class="navbar-brand" href="{% url 'home' %}">
+          <div class="logo">Krishikaram</div>
+        </a>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsExample04" aria-controls="navbarsExample04" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+
+      <div class="collapse navbar-collapse" id="navbarsExample04">
+        <ul class="navbar-nav mr-auto">
+          <li class="nav-item">
+            <a class="nav-link" href="{% url 'home' %}">Home</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="{% url 'about' %}">About Us</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="{% url 'services' %}">Services</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="{% url 'contact' %}">Contact</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="{% url 'event' %}">Our Events</a>
+          </li>
+            <li class="nav-item">
+            <a class="nav-link" href="{% url 'detail' %}">Detail Form</a>
+          </li>
+            <li class="nav-item">
+            <a class="nav-link" href="{% url 'buy_sell' %}">Buying/Selling</a>
+            </li>
+                <!--dropdown-->
+            <!--<li>-->
+              <!--<a class="nav-link dropdown-toggle" href="https://example.com" id="dropdown01" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Dropdown</a>-->
+            <!--<div class="dropdown-menu" aria-labelledby="dropdown01">-->
+              <!--<a class="dropdown-item" href="{% url 'buy_sell' %}">Buy/Sell</a>-->
+              <!--<a class="dropdown-item" href="{% url 'detail' %}">Details</a>-->
+              <!--<a class="dropdown-item" href="#">Something else here</a>-->
+                <!--<a class="dropdown-item" href="#">Something else here</a>-->
+
+            <!--</div>-->
+            <!--</li>-->
+          <!--dropdown-end-->
+
+            <li class="nav-item dropdown">
+      <a class="nav-link dropdown-toggle" href="#" id="navbardrop" data-toggle="dropdown">
+        Dropdown
+      </a>
+      <div class="dropdown-menu">
+        <a class="dropdown-item" href="{% url 'buy_sell' %}">Buy/Sell</a>
+              <a class="dropdown-item" href="{% url 'detail' %}">Details</a>
+              <a class="dropdown-item" href="#">Something else here</a>
+                <a class="dropdown-item" href="#">Something else here</a>
+      </div>
+    </li>
+
+
+
+
+        </ul>
+        <ul class="navbar-nav" id="nav">
+            {% if not status %}
+            <li class="nav-item">
+              <button type="button" class="btn btn-dark" data-toggle="modal" data-target="#exampleModalCenter2">
+                Sign in
+              </button>
+            </li>
+            <li class="nav-item">
+              <button type="button" class="btn btn-dark" data-toggle="modal" data-target="#exampleModalCenter">
+                Sign up
+              </button>
+            </li>
+            {% else %}
+                  <a class="btn btn-dark" href="{% url 'logout' %}">
+                Logout
+              </a>
+            </li>
+            {% endif %}
+
+          </ul>
+
+           <form>
+						 <!--<input type="text" value="Search.." onfocus="this.value = '';" onblur="if (this.value == '') {this.value = 'Search..';}"/>-->
+						 <!--<input type="submit" value="">-->
+               <div id="google_translate_element"></div>
+                    <script type="text/javascript">
+								function googleTranslateElementInit() {
+ 						 new google.translate.TranslateElement({pageLanguage: 'en'}, 'google_translate_element');
+												}
+					</script>
+
+		            <script type="text/javascript" src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
+           </form>
+      </div>
+      </div>
+    </nav>
+
+<div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLongTitle">Sign up</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <form method="post" action="{% url 'signup' %}">
+            {% csrf_token %}
+            <div class="row">
+                <div class="col-md-6">
+                    <div class="form-group">
+    <label for="exampleInputEmail2">Name</label>
+    <input type="text" name="name" class="form-control" required id="exampleInputEmail2" aria-describedby="emailHelp2" placeholder="Full Name">
+
+  </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="form-group">
+    <label for="exampleInputEmail2">State</label>
+    <input type="text" name="state" class="form-control" required id="exampleInputEmail2" aria-describedby="emailHelp2" placeholder=" Your State">
+
+  </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-6">
+                    <div class="form-group">
+    <label for="exampleInputEmail2">Mobile</label>
+    <input type="number" name="mobile" class="form-control" required id="exampleInputEmail2" aria-describedby="emailHelp2" placeholder="Your Mobile">
+
+  </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="form-group">
+    <label for="exampleInputEmail2">City</label>
+    <input type="text" name="city" class="form-control" required id="exampleInputEmail2" aria-describedby="emailHelp2" placeholder="Your City">
+
+  </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-6">
+                    <div class="form-group">
+    <label for="exampleInputEmail2">Aadhaar</label>
+    <input type="number" name="aadhaar" class="form-control" required id="exampleInputEmail2" aria-describedby="emailHelp2" placeholder="Your Aadhaar Number">
+
+  </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="form-group">
+    <label for="exampleInputEmail2">Locality</label>
+    <input type="text" name="locality" class="form-control" required id="exampleInputEmail2" aria-describedby="emailHelp2" placeholder="Your Locality">
+
+  </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-6">
+                    <div class="form-group">
+    <label for="exampleInputEmail2">PinCode</label>
+    <input type="number" name="pin" class="form-control" required id="exampleInputEmail2" aria-describedby="emailHelp2" placeholder="PinCode">
+
+  </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="form-group">
+    <label for="exampleInputEmail2">Sub Locality</label>
+    <input type="text" name="sub_locality" class="form-control" required id="exampleInputEmail2" aria-describedby="emailHelp2" placeholder="Your Sub Locality">
+
+  </div>
+                </div>
+            </div>
+
+  <button type="submit" class="btn btn-primary">Register</button>
+</form>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+
+      </div>
+    </div>
+  </div>
+</div>
+
+
+  <div class="modal fade" id="exampleModalCenter2" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle2" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLongTitle2">Login</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <form method="post" action="{% url 'login' %}">
+            {% csrf_token %}
+  <div class="form-group">
+    <label for="exampleInputEmail1">Mobile</label>
+    <input name="username" type="number" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Your Mobile">
+    <small id="emailHelp" class="form-text text-muted">We'll never share your mobile with anyone else.</small>
+  </div>
+  <div class="form-group">
+    <label for="exampleInputPassword1">Aadhaar</label>
+    <input name="password" type="password" class="form-control" id="exampleInputPassword1" placeholder="Your Aadhaar Number">
+  </div>
+  <button type="submit" class="btn btn-primary">Login</button>
+</form>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+
+      </div>
+    </div>
+  </div>
+</div>
+    <script>
+        window.onload = function(){
+            {% if error %}
+                alert("{{ error }}");
+            {% endif %}
+        }
+    </script>
+</body>
+</html>
