@@ -25,7 +25,7 @@
             <a class="nav-link" href="{% url 'about' %}">About Us</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="#">Services</a>
+            <a class="nav-link" href="{% url 'services' %}">Services</a>
           </li>
           <li class="nav-item">
             <a class="nav-link" href="{% url 'contact' %}">Contact</a>
@@ -34,10 +34,41 @@
             <a class="nav-link" href="{% url 'event' %}">Our Events</a>
           </li>
             <li class="nav-item">
-            <a class="nav-link" href="{% url 'buy_sell' %}">Buying/Selling</a>
+            <a class="nav-link" href="{% url 'detail' %}">Detail Form</a>
           </li>
+            <li class="nav-item">
+            <a class="nav-link" href="{% url 'buy_sell' %}">Buying/Selling</a>
+            </li>
+                <!--dropdown-->
+            <!--<li>-->
+              <!--<a class="nav-link dropdown-toggle" href="https://example.com" id="dropdown01" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Dropdown</a>-->
+            <!--<div class="dropdown-menu" aria-labelledby="dropdown01">-->
+              <!--<a class="dropdown-item" href="{% url 'buy_sell' %}">Buy/Sell</a>-->
+              <!--<a class="dropdown-item" href="{% url 'detail' %}">Details</a>-->
+              <!--<a class="dropdown-item" href="#">Something else here</a>-->
+                <!--<a class="dropdown-item" href="#">Something else here</a>-->
+
+            <!--</div>-->
+            <!--</li>-->
+          <!--dropdown-end-->
+
+            <li class="nav-item dropdown">
+      <a class="nav-link dropdown-toggle" href="#" id="navbardrop" data-toggle="dropdown">
+        Dropdown
+      </a>
+      <div class="dropdown-menu">
+        <a class="dropdown-item" href="{% url 'buy_sell' %}">Buy/Sell</a>
+              <a class="dropdown-item" href="{% url 'detail' %}">Details</a>
+              <a class="dropdown-item" href="#">Something else here</a>
+                <a class="dropdown-item" href="#">Something else here</a>
+      </div>
+    </li
+
+
+
         </ul>
         <ul class="navbar-nav">
+            {% if not status%}
             <li class="nav-item">
               <button type="button" class="btn btn-dark" data-toggle="modal" data-target="#exampleModalCenter2">
                 Sign in
@@ -48,6 +79,12 @@
                 Sign up
               </button>
             </li>
+            {% else %}
+                  <a class="btn btn-dark" href="{% url 'logout' %}">
+                Logout
+              </a>
+            </li>
+            {% endif %}
 
           </ul>
       </div>

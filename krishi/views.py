@@ -1,4 +1,4 @@
-from django.shortcuts import render, HttpResponse
+from django.shortcuts import render, HttpResponse, redirect
 
 
 from .models import *
@@ -12,6 +12,13 @@ def home(request):
 def about(request):
     return render(request, 'about.html', {"title": "about"})
 
+def services(request):
+    return render(request, 'slider.html',{"title":"services"})
+
+def detail(request):
+    return render(request, 'detail.html',{"title":"detail"})
+
+
 def contact(request):
     return render(request, 'contact.html',{"title":"contact"})
 
@@ -19,7 +26,15 @@ def event(request):
     return render(request, 'event.html',{"title":"event"})
 
 def buy_sell(request):
-    return render(request, 'buy.html',{"title":"buy_sell"})
+
+    if request.session.has_key("user"):
+
+        return render(request, 'buy.html', {"title": "buy_sell",
+                                            "status": True})
+    else:
+        return redirect("login")
+
+
 
 def login_view(request):
     if request.method == "POST":
@@ -28,7 +43,9 @@ def login_view(request):
         user = User.objects.filter(mobile=username).first()
         if user:
             if user.aadhaar==password:
-                return HttpResponse("success login")
+                request.session['user'] = username
+                return redirect("buy_sell")
+
             else:
                 return render(request, 'index.html', {"error": "invalid password"})
         else:
@@ -66,4 +83,5 @@ def signup_view(request):
 
 
 def logout_view(request):
-    return render(request, 'form.html', {})
+    del request.session["user"]
+    return redirect("home")
