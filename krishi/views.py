@@ -16,7 +16,7 @@ def services(request):
     return render(request, 'slider.html',{"title":"services"})
 
 def detail(request):
-    return render(request, 'detail.html',{"title":"detail"})
+    return render(request, '',{"title":"detail"})
 
 
 def contact(request):
