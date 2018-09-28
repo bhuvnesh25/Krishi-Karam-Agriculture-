@@ -1,6 +1,6 @@
 from django.shortcuts import render, HttpResponse, redirect
-
-
+import sendgrid
+from sendgrid.helpers.mail import *
 from .models import *
 
 
@@ -64,21 +64,34 @@ def signup_view(request):
         locality = request.POST.get("locality")
         pin = request.POST.get("pin")
         sub_locality = request.POST.get("sub_locality")
+        email = request.POST.get("email")
 
 
         try:
             address = Address(state=state, city=city, locality=locality, sub_locality=sub_locality, pin=pin)
             address.save()
             address_id = address.id
-        except:
-            return HttpResponse("Something went wrong with database")
+        except Exception as e:
+            print(e)
 
         try:
-            user = User(address_id=address_id,name=name, aadhaar=aadhaar, mobile=mobile)
+            user = User(email=email, address_id=address_id, name=name, aadhaar=aadhaar, mobile=mobile)
             user.save()
+            try:
+                sg = sendgrid.SendGridAPIClient(apikey="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")
+                from_email = Email("info@krishikaram.com")
+                to_email = Email(email)
+                subject = "Welcome to krishikaram"
+                content = Content("text/plain", "you are successfully registered to Krishikaram")
+                mail = Mail(from_email, subject, to_email, content)
+                response = sg.client.mail.send.post(request_body=mail.get())
+                print(response)
+            except Exception as e:
+
+                print(e)
             return render(request, 'index.html', {"error": "Register successful"})
-        except:
-            return HttpResponse("Something went wrong with database")
+        except Exception as e:
+            print(e)
     return render(request, 'index.html', {"error": "Worked"})
 
 
