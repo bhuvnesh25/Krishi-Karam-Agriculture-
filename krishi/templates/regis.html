@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+{% load static %}
+<html>
+<head>
+	<title>buying or selling</title>
+	<!--stylesheet-->
+	
+	 <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+      <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css">
+    <link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
+
+    <!-- jQuery library -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+
+    <!-- Popper JS -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"></script>
+
+    <!-- Latest compiled JavaScript -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"></script>
+ <!-- styling -->
+<style>
+	label{
+		color: white;
+	}
+	body{
+
+	background: url("{% static 'pics/bg1.jpg' %}")no-repeat;
+	background-size: cover;
+    }
+	#form-bg{
+		background-color: rgba(0,0,0,0.5);
+		
+		font-family: 'Roboto', sans-serif;
+		font-size: 100%;
+		width: 800px;
+		margin-left: 150px;
+		text-align: center;
+	}
+
+
+	.center input {
+		border-radius: 5px;
+	}
+
+	.form-parent {
+		padding-top: 50px;
+	}
+
+
+	.input {
+	    width: 300px;
+	    padding: 10px 10px 10px 10px;
+	}
+	.button1 {
+	    width: 200px;
+	    padding: 10px 10px 10px 10px;
+	}
+	#Search_btn{
+		width: 400px;
+	}
+	.center{
+		padding: 50px;
+
+	}
+	#len{
+		width: 100%;
+	}
+</style>
+
+</head>
+
+ 
+
+
+
+<body>
+
+
+{% include 'navbar.html' %}
+
+<!--background-->
+<div class="container form-parent" >
+	<div class="" >
+		<div class="">
+			<div id="form-bg" class="center">
+
+				 <label><h1>Fill Your Details Here</h1></label><br><br>
+
+
+				<input type="input"  name="input" placeholder="State">
+				 <input type="input"  name="input" placeholder="Address"><br><br>
+				 <input type="input"  name="input" placeholder="Phone Number">
+				 <input type="input"  name="input" placeholder="Near By Mandi"><br><br>
+
+				  <input type="input"  name="input" placeholder="Number Of Plot">
+				 <input type="input"  name="input" placeholder="Plot Number"><br><br>
+				 <input type="input"  name="input" placeholder="Area">
+				 <input type="input"  name="input" placeholder="Units"><br><br>
+
+
+				 <input type="input" name="input" placeholder="Crops">
+				 <input type="input" name="input" placeholder="Gender"><br><br>
+
+				
+
+
+
+
+
+				 <button  id="Search_btn"class="btn btn-danger button1">Submit</button><br><br><br><br>
+
+
+			</div>
+		 </div>
+									
+								
+					<div class="col-md-6">
+
+								
+					</div>
+
+								<div class="clear"></div>
+							
+		
+		</div>
+	</div>
+</div>
+
+
+
+
+
+
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+
+</body>
+</html>

@@ -16,15 +16,17 @@ def services(request):
     return render(request, 'serve.html',{"title":"services"})
 
 def detail(request):
-    return render(request, '',{"title":"detail"})
+    return render(request, 'regis.html',{"title":"detail"})
 
-def buy(request):
-    return render(request, 'buy_sell.html',{"title":"buy"})
+def info(request):
+    return render(request, 'info.html',{"title":"info"})
 
 
 def news(request):
     return render(request, 'news.html',{"title":"news"})
 
+def payment(request):
+    return render(request, 'payment.html',{"title":"payment"})
 
 def contact(request):
     return render(request, 'contact.html',{"title":"contact"})
@@ -32,11 +34,14 @@ def contact(request):
 def event(request):
     return render(request, 'event.html',{"title":"event"})
 
-def buy_sell(request):
+def search(request):
+    return render(request, 'search.html',{"title":"search"})
+
+def buy(request):
 
     if request.session.has_key("user"):
 
-        return render(request, 'buy.html', {"title": "buy_sell",
+        return render(request, 'buy_sell.html', {"title": "buy",
                                             "status": True})
     else:
         return redirect("login")
@@ -51,7 +56,7 @@ def login_view(request):
         if user:
             if user.aadhaar==password:
                 request.session['user'] = username
-                return redirect("buy_sell")
+                return redirect("buy")
 
             else:
                 return render(request, 'index.html', {"error": "invalid password"})
