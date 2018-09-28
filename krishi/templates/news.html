@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+<head>
+    <title>news and articles</title>
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css">
+
+<!-- jQuery library -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+
+<!-- Popper JS -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"></script>
+
+<!-- Latest compiled JavaScript -->
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"></script>
+<script type="text/javascript" src="https://platform.linkedin.com/badges/js/profile.js"></script>
+<style>
+  
+  .card{
+    background-color: #ffffcc
+  }
+</style>
+
+
+
+
+</head>
+ <body>
+
+ <!-- Navigation -->
+{% include 'navbar.html' %}
+
+
+   <div class="container">
+    <h1
+    style="text-align: left;
+           font-weight: bold;
+           margin-top: 20px;        
+           border-bottom: 1px solid rgba(0, 0, 0,0.1);
+           padding-bottom: 5px;">
+        <em>News and Articles</em></h1>
+
+        <marquee> <mark>FDI in food processing touches $1-billion mark this year: <b>Harsimrat Kaur Badal</b></mark> , <mark>Heavy rains hit paddy, cotton crops hard in <b>Punjab , Haryana</b></mark> , <mark>PMO to review draft agriculture export policy</mark> , <mark>India's public spending on agriculture R&D not far behind China: <b>Niti Aayog member</b></mark> , <mark>Sebi to levy <b>Rs 1 lakh</b> per exchange on turnover from agri-commodity derivatives</mark></marquee>
+      <div class="row" style="padding: 40px; margin-bottom: 40px;">
+        <div class="col-12"> 
+            <div class="card" style="width: 50rem; margin-bottom: 40px;">
+              <h1 style="color: blue;">Kharif food-grain output to be record high, show initial government estimates</h1>
+                <p>Sep 26 ,2018</p>
+              <img class="card-img-top" src="{% static 'pics/10.jpg' %}" alt="Card image cap">
+              <div class="card-body">
+                
+                <p class="card-text text-justify" >Production of rice, sugarcane and oilseed is expected to be higher than last year, show the first advance estimate of the agriculture ministry, released on Wednesday.</p>
+                <!-- <a href="#" class="btn btn-primary">Go somewhere</a> -->
+              </div>
+            </div> 
+        </div>
+
+        <div class="col-12"> 
+            <div class="card" style="width: 50rem; margin-bottom: 40px;">
+              <h1 style="color: blue;"> Here's a happy farm story from a small Jammu village</h1>
+                <p>Sep 14,2018</p>
+              <img class="card-img-top" src="{% static 'pics/8.jpg' %}" alt="Card image cap">
+              <div class="card-body">
+                
+                <p class="card-text text-justify" >Meet Bharat Bhushan of Khellani village in Doda district of Jammu and Kashmir. The farmer switched from maize to lavender for his 2 acre plot nearly 20 years ago and has never looked back. By this November, he will be adding another 10 acres. “I planted the crop for the first time in 2000 and the returns are four times what I used to get for maize,” he says. </p>
+                <!-- <a href="#" class="btn btn-primary">Go somewhere</a> -->
+              </div>
+            </div> 
+        </div>
+
+        <div class="col-12"> 
+            <div class="card" style="width: 50rem; margin-bottom: 40px;">
+                <h1 style="color: blue;">Cabinet okeys Rs 5,500 crore package for sugar industry</h1>
+                <p>Sep 26,2018</p>
+              <img class="card-img-top" src="{% static 'pics/11.jpg' %}" alt="Card image cap">
+              <div class="card-body">
+                
+                <p class="card-text text-justify" >The government Wednesday approved a Rs 5,500 crore package for the sugar industry that includes over two-fold jump in production assistance to cane growers and transport subsidy to mills for export up to 5 million tonnes in the marketing year 2018-19.</p>
+                <!-- <a href="#" class="btn btn-primary">Go somewhere</a> -->
+              </div>
+            </div> 
+        </div>
+
+        <div class="col-12"> 
+            <div class="card" style="width: 50rem; margin-bottom: 40px;">
+              <h1 style="color: blue;">Tea industry should benchmark itself: Commerce secretary</h1>
+                <p>Sep 26,2018</p>
+              <img class="card-img-top" src="{% static 'pics/9.jpg' %}" alt="Card image cap">
+              <div class="card-body">
+                
+                <p class="card-text text-justify" >He said that the industry should explore new markets, adding that quality of tea would have to be improved for better price realisation.</p>
+                <!-- <a href="#" class="btn btn-primary">Go somewhere</a> -->
+              </div>
+            </div> 
+        </div>
+      </div>
+ </body>
+ </html>       

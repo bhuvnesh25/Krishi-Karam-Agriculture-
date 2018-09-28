@@ -1,0 +1,170 @@
+<!doctype html>
+{% load static %}
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+       <!-- Bootstrap CSS -->
+	<!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css">
+    <link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
+
+    <!-- jQuery library -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+
+    <!-- Popper JS -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"></script>
+
+    <!-- Latest compiled JavaScript -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"></script>
+
+
+    <title>Nav and Tab</title>
+  </head>
+
+
+  <body>
+  {% include 'navbar.html' %}
+
+  	<ul class=" nav nav-tabs" style="background-color:black;opacity:0.4;">
+              <li class="nav-item">
+                <a href="#one" class="nav-link active" data-toggle="tab" style="color:orange;">Buy</a>
+              </li>
+              <li class="nav-item">
+                <a href="#two" class="nav-link" data-toggle="tab" style="color:orange;">Sell</a>
+              </li>
+              
+    </ul> 
+          <div class="tab-content">
+          	<li class="tab-pane active" id="one" style="width:100%;height:100vh" >
+                 <div class="container">
+    <h1 
+    style="text-align: center;
+           font-weight: bold;
+           margin-top: 20px;        
+           border-bottom: 1px solid rgba(0, 0, 0,0.1);
+           padding-bottom: 5px;">
+        <em>Product Details</em></h1>
+    <div class="row" style="padding: 25px; margin-bottom: 25px;">
+        <div class="col-md-4"> 
+            <div class="card" style="width: 18rem;">
+              <img class="card-img-top" src="{% static 'images/rotavator.jpg' %}" alt="Card image cap">
+              <div class="card-body">
+                <h5 class="card-title">Rotavator (6 ft., 48 blades, Brand: Gobind)</h5>
+                <p class="card-text text-justify" >
+                                                 Rs 83,106/ Piece</p>
+                                                 <p>Brand: Gobind
+
+                                              Material: Iron</p>
+                                              <input type="submit" value="Buy Now">
+                <!-- <a href="#" class="btn btn-primary">Go somewhere</a> -->
+              </div>
+            </div> 
+        </div>
+        <div class="col-md-4"> 
+            <div class="card" style="width: 18rem;">
+              <img class="card-img-top" src="{% static 'images/engine.jpg' %}" alt="Card image cap">
+              <div class="card-body">
+                <h5 class="card-title">HP Engine Mist Blower</h5>
+                <p class="card-text text-justify">Rs 4,800/Piece
+                            HP engine with Electronic type with single coil.</p>
+                            <input type="submit" value="Buy Now">
+                <!-- <a href="#" class="btn btn-primary">Go somewhere</a> -->
+              </div>
+            </div>
+            </div>
+
+
+          <div class="col-md-4"> 
+            <div class="card" style="width: 18rem;">
+              <img class="card-img-top" src="{% static 'images/suger.jpg' %}" alt="Card image cap">
+              <div class="card-body">
+                <h5 class="card-title">Sugarcane Bud Cutting Machine With Counting Sensor</h5>
+                <p class="card-text text-justify" >Rs 35,000/No
+                 <p>Machine cuts 3600 buds in 1 hour. heavy duty machine.</p>
+                <!-- <a href="#" class="btn btn-primary">Go somewhere</a> -->
+                <input type="submit" value="Buy Now">
+              </div>
+            </div> 
+        </div>
+      </div>
+
+
+      <div class="row" style="padding: 25px; margin-bottom: 25px;">
+        <div class="col-md-4"> 
+            <div class="card" style="width: 18rem;">
+              <img class="card-img-top" src="{% static 'images/glycel.jpg' %}" alt="Card image cap">
+              <div class="card-body">
+                <h5 class="card-title">Glycel Agriculture Herbicide</h5>
+                <p class="card-text text-justify" >Rs 265/Litre</p>
+                <input type="submit" value="Buy Now">
+                <!-- <a href="#" class="btn btn-primary">Go somewhere</a> -->
+              </div>
+            </div> 
+        </div>
+        <div class="col-md-4"> 
+            <div class="card" style="width: 18rem;">
+              <img class="card-img-top" src="{% static 'images/excel.jpg' %}" alt="Card image cap">
+              <div class="card-body">
+                <h5 class="card-title">Excel Mera 71 Herbicide</h5>
+                <p class="card-text text-justify">Rs 500/Kilogram</p>
+                <input type="submit" value="Buy Now">
+                <!-- <a href="#" class="btn btn-primary">Go somewhere</a> -->
+              </div>
+            </div>
+            </div>
+
+
+          <div class="col-md-4"> 
+            <div class="card" style="width: 18rem;">
+              <img class="card-img-top" src="{% static 'images/panida.jpg' %}" alt="Card image cap">
+              <div class="card-body">
+                <h5 class="card-title">Panida Herbicide</h5>
+                <p class="card-text text-justify" >Rs 370/Litre</p>
+                <input type="submit" value="Buy Now">
+                <!-- <a href="#" class="btn btn-primary">Go somewhere</a> -->
+              </div>
+            </div> 
+        </div>
+      </div>    
+            </li>
+               <li class="tab-pane" id="two" style="width:100%;height:100vh">
+                    <div class="container form-parent" >
+	                     <div class="row" >
+		                   <div class="col-md-6">
+		                  	<div id="form-bg" class="center">
+
+				                  <h1 style="color: white;">Buying</h1><br><br>
+				 
+
+									 <input type="input" name="input" placeholder="Product name">
+									 <input type="input" name="input" placeholder="Category"><br><br>
+									 
+									 <input type="input" name="input" placeholder="Quantity"><br><br>
+
+									 <textarea id="len"type="text" name="input" placeholder="Description"value="message"></textarea><br><br>
+
+
+
+
+
+
+
+									 <button  id="Search_btn"class="btn btn-danger">Submit</button><br><br><br><br>
+
+
+			                </div>
+		                  </div>
+		                </div>
+		           </div>
+
+               </li>
+               
+          </div>
+
+
+  </body>
+</html>	

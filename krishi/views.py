@@ -13,10 +13,17 @@ def about(request):
     return render(request, 'about.html', {"title": "about"})
 
 def services(request):
-    return render(request, 'slider.html',{"title":"services"})
+    return render(request, 'serve.html',{"title":"services"})
 
 def detail(request):
     return render(request, '',{"title":"detail"})
+
+def buy(request):
+    return render(request, 'buy_sell.html',{"title":"buy"})
+
+
+def news(request):
+    return render(request, 'news.html',{"title":"news"})
 
 
 def contact(request):
