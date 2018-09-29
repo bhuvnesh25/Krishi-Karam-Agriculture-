@@ -24,9 +24,13 @@ urlpatterns = [
     path("contact", contact, name="contact"),
     path("event",event, name="event"),
     path("services",services, name="services"),
+    path("news",news, name="news"),
+    path("buy",buy, name="buy"),
     path("detail",detail, name="detail"),
-    path("buy",buy_sell, name="buy_sell"),
+    path("info",info, name="info"),
+    path("search",search, name="search"),
     path("login", login_view ,name="login"),
     path("signup", signup_view,name="signup"),
-path("logout", signup_view,name="logout")
+    path("logout", signup_view,name="logout"),
+    path("payment",payment,name="payment"),
 ]
