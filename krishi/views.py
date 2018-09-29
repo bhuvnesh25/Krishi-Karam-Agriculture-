@@ -35,6 +35,9 @@ def event(request):
     return render(request, 'event.html',{"title":"event"})
 
 def search(request):
+    if request.method == 'POST':
+        name= request.POST.get()
+        data=Data.objects.filter
     return render(request, 'search.html',{"title":"search"})
 
 def buy(request):
