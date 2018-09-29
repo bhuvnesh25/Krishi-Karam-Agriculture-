@@ -3,9 +3,12 @@ import sendgrid
 from sendgrid.helpers.mail import *
 from .models import *
 
+from django.core.cache import cache
+cache.clear()
+
 
 def home(request):
-    return render(request, 'index.html', {"title":"Home"})
+    return render(request, 'index2.html', {"title":"Home"})
 
 
 def about(request):
@@ -85,10 +88,10 @@ def login_view(request):
                 return redirect("search")
 
             else:
-                return render(request, 'index.html', {"error": "invalid password"})
+                return render(request, 'index2.html', {"error": "invalid password"})
         else:
-            return render(request, 'index.html', {"error": "Invalid mobile"})
-    return render(request, 'index.html', {"error": "Invalid mobile"})
+            return render(request, 'index2.html', {"error": "Invalid mobile"})
+    return render(request, 'index2.html', {"error": "Invalid mobile"})
 
 
 def signup_view(request):
@@ -97,7 +100,7 @@ def signup_view(request):
         state = request.POST.get("state")
         mobile = request.POST.get("mobile")
         city= request.POST.get("city")
-        password = request.POST.get("password")
+        password = request.POST.get("aadhaar")
         locality = request.POST.get("locality")
         pin = request.POST.get("pin")
         sub_locality = request.POST.get("sub_locality")
@@ -125,10 +128,10 @@ def signup_view(request):
                 print(str(response))
             except Exception as e:
                 print(e)
-            return render(request, 'index.html', {"error": "Register successful"})
+            return render(request, 'index2.html', {"error": "Register successful"})
         except Exception as e:
-            return render(request, 'index.html', {"error": e})
-    return render(request, 'index.html', {"error": False})
+            return render(request, 'index2.html', {"error": e})
+    return render(request, 'index2.html', {"error": False})
 
 
 def logout_view(request):
