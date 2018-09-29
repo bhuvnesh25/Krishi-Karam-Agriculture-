@@ -4,19 +4,21 @@ from sendgrid.helpers.mail import *
 from .models import *
 
 
-
-
 def home(request):
     return render(request, 'index.html', {"title":"Home"})
+
 
 def about(request):
     return render(request, 'about.html', {"title": "about"})
 
+
 def services(request):
     return render(request, 'serve.html',{"title":"services"})
 
+
 def detail(request):
     return render(request, 'regis.html',{"title":"detail"})
+
 
 def info(request):
     return render(request, 'info.html',{"title":"info"})
@@ -25,27 +27,51 @@ def info(request):
 def news(request):
     return render(request, 'news.html',{"title":"news"})
 
+
 def payment(request):
     return render(request, 'payment.html',{"title":"payment"})
+
 
 def contact(request):
     return render(request, 'contact.html',{"title":"contact"})
 
+
 def event(request):
     return render(request, 'event.html',{"title":"event"})
 
+
 def search(request):
-    return render(request, 'search.html',{"title":"search"})
+    if request.session.has_key("user"):
+        if request.method == "POST":
+            query = request.POST.get("query")
+
+            crop = Data.objects.filter(crop_name=query).first()
+
+            if crop:
+                print(crop)
+                return render(request, 'search.html', {"title": "search",
+                                                       "status": True,
+                                                       "data": crop})
+            else:
+                return render(request, 'search.html', {"title": "search",
+                                                       "status": True,
+                                                       "data": False})
+
+        else:
+            return render(request, 'search.html', {"title": "search",
+                                                   "status": True})
+    else:
+        return redirect("login")
+
 
 def buy(request):
 
     if request.session.has_key("user"):
 
         return render(request, 'buy_sell.html', {"title": "buy",
-                                            "status": True})
+                                                 "status": True})
     else:
         return redirect("login")
-
 
 
 def login_view(request):
@@ -56,14 +82,13 @@ def login_view(request):
         if user:
             if user.aadhaar==password:
                 request.session['user'] = username
-                return redirect("buy")
+                return redirect("search")
 
             else:
                 return render(request, 'index.html', {"error": "invalid password"})
         else:
             return render(request, 'index.html', {"error": "Invalid mobile"})
     return render(request, 'index.html', {"error": "Invalid mobile"})
-
 
 
 def signup_view(request):
@@ -104,7 +129,7 @@ def signup_view(request):
             return render(request, 'index.html', {"error": "Register successful"})
         except Exception as e:
             print(e)
-    return render(request, 'index.html', {"error": "Worked"})
+    return render(request, 'index.html', {"error": False})
 
 
 def logout_view(request):

@@ -37,7 +37,11 @@
     
   </head>
   <body>
-
+    {% if error %}
+        <div style="color: red">
+            <h3 class="text-center">{{ error }}</h3>
+        </div>
+    {% endif %}
   {% include 'navbar.html' %}
 
     <div id="banner">
@@ -232,13 +236,6 @@
     </div>
   </div>
 </div>
-    <script>
-        window.onload = function(){
-            {% if error %}
-                alert("{{ error }}");
-            {% endif %}
-        }
-    </script>
 
     <footer class="py-5 bg-dark">
       <h4 class="text-center" style="color:white;">Copyright@ by Team Dominators</h4>

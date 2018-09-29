@@ -66,7 +66,9 @@
 				color: white;
 			}
 
-
+            body{
+                overflow-x: hidden;
+            }
 	</style>
 </head>
 
@@ -80,18 +82,34 @@
 <div class="container form-parent" >
 	<div class="row" >
 		<div class="col-md-6">
-			<div id="form-bg" class="center">
+            <form action="{% url 'search' %}" method="post">
+                {% csrf_token %}
+                <div id="form-bg" class="center">
 
-				 <input type="input" name="input" placeholder=" your crop"><br><br>
+				 <input required type="input" name="query" placeholder=" your crop"><br><br>
 
-				 <button  id="Search_btn"class="btn btn-outline-info button1">Search</button><br>
+				 <button type="submit" id="Search_btn"class="btn btn-outline-info button1">Search</button><br>
 			</div>
+            </form>
 		 </div>
 									
 								
 					<div class="col-md-6">
 							<div id="processed-data">
-										Data will be seen here
+                                {% if data %}
+                                    <ul class="list-group">
+                                      <li class="list-group-item">Crop Name: {{ data.crop_name }}</li>
+                                      <li class="list-group-item">Days: {{ crop.days }}</li>
+                                      <li class="list-group-item">Diseases: {{ data.crop_diseases }}</li>
+                                      <li class="list-group-item">Price: {{ data.current_price }}</li>
+                                      <li class="list-group-item">fungicides: {{ data.fungicides }}</li>
+                                    <li class="list-group-item">herbicides: {{ data.herbicides }}</li>
+                                    <li class="list-group-item">seed_treatment: {{ data.seed_treatment }}</li>
+                                    <li class="list-group-item text-justify">planting_teachnique: {{ data.planting_teachnique }}</li>
+                                    </ul>
+                                    {% else %}
+                                    No Data Found
+                                {% endif %}
 							</div>
 								
 					</div>
