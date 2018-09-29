@@ -33,7 +33,7 @@ class Data(models.Model):
     herbicides=models.CharField(max_length=50)
     seed_treatment=models.CharField(max_length=255)
     planting_teachnique=models.TextField()
-    information=models.TextField()
+
 
 
 class Mandi(models.Model):
